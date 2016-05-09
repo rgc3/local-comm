@@ -1,0 +1,28 @@
+<%= form_for @product do |f| %>
+
+<%= f.label "Name" %>
+<%= f.text_field :name %><br />
+
+<%= f.label "Price" %>
+<%= f.number_field :price %><br />
+
+<%= f.label "Description" %>
+<%= f.text_area :description %><br />
+
+<%= f.label "Quantity" %>
+<%= f.number_field :quantity %><br />
+
+<%= f.label "Address" %>
+<%= f.text_field :address %><br />
+
+<%= f.label "Condition" %>
+<%= f.collection_select(:condition_id, Condition.all, :id, :status) %><br />
+
+<%= f.label "Category" %>
+<%= f.collection_select(:category_id, Category.all, :id, :name) %><br />
+
+<%= f.number_field :user_id, value: current_user.id %><br />
+
+<%= f.submit %>
+
+<% end %>

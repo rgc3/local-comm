@@ -1,0 +1,123 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="wrap">
+    <h1>Welcome to Buy Stuff, Sell Stuff!</h1>
+    <p>
+      For recreational use only. Do not disturb. All models over 18 years of age. Prize not redeemable for cash value. If condition persists, consult your physician. No user-serviceable parts inside. Freshest if eaten before date on carton.
+    </p>
+  </div>
+</section>
+
+<!-- Off Canvas -->
+<div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+        <ul>
+          <li>Appliances</li>
+          <li>Auto Parts</li>
+          <li>Baby</li>
+          <li>Bicycles</li>
+          <li>Boats</li>
+          <li>Cars & Trucks</li>
+          <li>Clothing</li>
+          <li>Computers</li>
+          <li>Electronics</li>
+          <li>Furniture</li>
+          <li>General</li>
+          <li>Household</li>
+          <li>Jewelry</li>
+          <li>Motorcycles</li>
+          <li>Musical Instruments</li>
+          <li>RVs</li>
+          <li>Sporting Goods</li>
+          <li>Tools</li>
+          <li>Toys</li>
+        </ul>
+      </div>
+      <div class="off-canvas-content" data-off-canvas-content>
+
+        <div class="title-bar">
+          <div class="title-bar-left">
+            <button class="hollow button" type="button" data-open="offCanvasLeft">Categories</button>
+          </div>
+          <div class="title-bar-right">
+            <div class="input-group">
+              <input class="input-group-field" type="number">
+              <div class="input-group-button">
+                <input type="submit" class="hollow button" value="Search">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row small-up-3 medium-up-4 large-up-5">
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+          <div class="column">
+            <h5>Product</h5>
+            <img class="thumbnail" src="http://placehold.it/550x550">
+          </div>
+        </div>
+
+      </div> <!-- Off canvas content -->
+    </div> <!-- Off canvas wrapper inner -->
+  </div> <!-- Off canvas wrapper -->
+
+<% @products.each do |product| %>
+<%= product.name %>
+<%= product.distance_to(current_user) %>
+<% end %>
