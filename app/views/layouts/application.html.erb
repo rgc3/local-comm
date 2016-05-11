@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Local Ecommerce App</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Local Ecommerce App</title>
-
     <%= stylesheet_link_tag    "application" %>
-
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-
     <%= csrf_meta_tags %>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_api_key']%>&callback=initMap" type="text/javascript"></script>
   </head>
