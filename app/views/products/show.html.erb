@@ -43,7 +43,10 @@
   </div>
 </div>
 
-<div id="map-canvas"></div>
+<div class="wrap">
+  <div id="map-canvas"></div>
+</div>
+
 
 <%= javascript_tag do %>
   latitude = '<%= j @product.latitude.to_s %>';
