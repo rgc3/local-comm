@@ -14,22 +14,30 @@ class CartsController < ApplicationController
 
   def create
     @cart = Cart.new(cart_params)
+    respond_to do |format|
     if @cart.save
-      redirect_to @cart
+      format.html { redirect_to @cart, notice: "Cart was successfully created" }
     else
-      render :new
+      format.html render :new
+      end
     end
+  end
 
   def destroy
+    @cart = Cart.find(params[:id])
     @cart.destroy
     respond_to do |format|
-      format.html {redirect_to products_path, notice: "Your item was successfully deleted."}
+      format.html { redirect_to products_path, notice: "Your item was successfully deleted." }
   end
 
   def update
     @cart = Cart.find(params[:id])
-    respond_to do |format|
-    format.html { redirect_to @cart }
+      respond_to do |format|
+        if @cart.update(cart_params)
+          format.html { redirect_to @cart, notice: "Your item was successfully updated." }
+        else
+          format.html { render :edit }
+      end
     end
   end
 
