@@ -1,31 +1,43 @@
+
 <%= form_for @product do |f| %>
 
-<%= f.label "Name" %>
-<%= f.text_field :name %><br />
+<div class="row">
+  <div class="col s12">
+    <div class="card blue darken-2">
+      <div class="card-content white-text">
 
-<%= f.label "Price" %>
-<%= f.number_field :price %><br />
+        <%= f.label "Name" %>
+        <%= f.text_field :name %><br />
 
-<%= f.label "Description" %>
-<%= f.text_area :description %><br />
+        <%= f.label "Price" %>
+        <%= f.number_field :price %><br />
 
-<%= f.label "Quantity" %>
-<%= f.number_field :quantity %><br />
+        <%= f.label "Description" %>
+        <%= f.text_area :description %><br />
 
-<%= f.label "Address" %>
-<%= f.text_field :address %><br />
+        <%= f.label "Quantity" %>
+        <%= f.number_field :quantity %><br />
 
-<%= f.label "Condition" %>
-<%= f.collection_select(:condition_id, Condition.all, :id, :status) %><br />
+        <%= f.label "Address" %>
+        <%= f.text_field :address %><br />
 
-<%= f.label "Category" %>
-<%= f.collection_select(:category_id, Category.all, :id, :name) %><br />
+        <%= f.label "Condition" %>
+        <%= f.collection_select(:condition_id, Condition.all, :id, :status) %><br />
 
-<%= f.label "Image" %>
-<%= f.file_field :image %>
+        <%= f.label "Category" %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name) %><br />
 
-<%= f.number_field :user_id, value: current_user.id %><br />
+        <%= f.label "Image" %>
+        <%= f.file_field :image %>
 
-<%= f.submit %>
+        <%= f.number_field :user_id, value: current_user.id %><br />
+
+      </div> <!-- Card Content -->
+      <div class="card-action">
+        <%= f.submit %>
+      </div>
+    </div> <!-- Card -->
+  </div> <!-- Column -->
+</div> <!-- Row -->
 
 <% end %>
