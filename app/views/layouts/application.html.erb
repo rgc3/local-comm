@@ -4,15 +4,19 @@
     <title>Local Ecommerce App</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" %>
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" %>
     <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_api_key']%>&callback=initMap" type="text/javascript"></script>
+    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js" %>
   </head>
 
-  <body>
-
+  <body class="blue-grey lighten-5">
+    <%= render "layouts/nav" %>
       <%= yield %>
+
 
   </body>
 </html>

@@ -1,6 +1,25 @@
 <h1><%= @user.username %>'s Profile</h1>
 
+<%= image_tag(@user.image.url(:thumb)) %>
+
 
 <%= current_user.distance_to(@user).round(2) %><br /><br /> <!-- .round(2) rounds up to two places past the decimal-->
 
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+
+<div class="row">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag(@user.image.url(:thumb)) %>
+        <span class="card-title"><%= @user.username %>'s Profile</span>
+      </div>
+      <div class="card-content">
+        <p>Profile info about user</p>
+      </div>
+      <div class="card-action">
+        <a href="#"><%= current_user.distance_to(@user).round(2) %> </a>
+      </div>
+    </div>
+  </div>
+</div>

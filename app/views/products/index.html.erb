@@ -1,123 +1,44 @@
-<!-- Hero Section -->
-<section class="hero">
-  <div class="wrap">
-    <h1>Welcome to Buy Stuff, Sell Stuff!</h1>
-    <p>
-      For recreational use only. Do not disturb. All models over 18 years of age. Prize not redeemable for cash value. If condition persists, consult your physician. No user-serviceable parts inside. Freshest if eaten before date on carton.
-    </p>
-  </div>
-</section>
-
-<!-- Off Canvas -->
-<div class="off-canvas-wrapper">
-    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-      <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
-        <ul>
-          <li>Appliances</li>
-          <li>Auto Parts</li>
-          <li>Baby</li>
-          <li>Bicycles</li>
-          <li>Boats</li>
-          <li>Cars & Trucks</li>
-          <li>Clothing</li>
-          <li>Computers</li>
-          <li>Electronics</li>
-          <li>Furniture</li>
-          <li>General</li>
-          <li>Household</li>
-          <li>Jewelry</li>
-          <li>Motorcycles</li>
-          <li>Musical Instruments</li>
-          <li>RVs</li>
-          <li>Sporting Goods</li>
-          <li>Tools</li>
-          <li>Toys</li>
-        </ul>
-      </div>
-      <div class="off-canvas-content" data-off-canvas-content>
-
-        <div class="title-bar">
-          <div class="title-bar-left">
-            <button class="hollow button" type="button" data-open="offCanvasLeft">Categories</button>
-          </div>
-          <div class="title-bar-right">
-            <div class="input-group">
-              <input class="input-group-field" type="text" placeholder="Item Search">
-              <div class="input-group-button">
-                <input type="submit" class="hollow button" value="Search">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row small-up-3 medium-up-4 large-up-5">
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-          <div class="column">
-            <h5>Product</h5>
-            <img class="thumbnail" src="http://placehold.it/550x550">
-          </div>
-        </div>
-
-      </div> <!-- Off canvas content -->
-    </div> <!-- Off canvas wrapper inner -->
-  </div> <!-- Off canvas wrapper -->
+<h1>Products Index<small>(root)</small></h1>
 
 <% @products.each do |product| %>
 <%= product.name %>
-<%= product.distance_to(current_user) %>
+<%= product.distance_to(current_user).round(2) %>
 <% end %>
+
+<div class="row">
+
+  <div class="col s2">
+    <% @products.each do |product| %>
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <!-- Product image tag -->
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%= product.name %><i class="material-icons right">Info</i></span>
+        <p><a href="#"><%= product.distance_to(current_user).round(2) %> Mi. Away</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><%= product.name %><i class="fa fa-times right" aria-hidden="true"></i></span>
+        <p>I don't worry. this is all wrong. I don't know what it is but when I kiss you, it's like kissing my brother. I guess that doesn't make any sense, does it? Doc, Doc, it's me, Marty. Save the clock tower, save the clock tower. Mayor Wilson is sponsoring an initiative to replace that clock. Thirty years ago, lightning struck that clock tower and the clock hasn't run since. We at the Hill Valley Preservation Society think it should be preserved exactly the way it is as part of our history and heritage. Hey, George, buddy, you weren't at school, what have you been doing all day? I don't like her, Marty. Any girl who calls a boy is just asking for trouble.</p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="col s2">
+    <!-- Promo Content 2 goes here -->
+  </div>
+  <div class="col s2">
+    <!-- Promo Content 3 goes here -->
+  </div>
+  <div class="col s2">
+    <!-- Promo Content 1 goes here -->
+  </div>
+  <div class="col s2">
+    <!-- Promo Content 2 goes here -->
+  </div>
+  <div class="col s2">
+    <!-- Promo Content 3 goes here -->
+  </div>
+
+</div>
