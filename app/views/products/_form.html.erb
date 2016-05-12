@@ -21,6 +21,9 @@
 <%= f.label "Category" %>
 <%= f.collection_select(:category_id, Category.all, :id, :name) %><br />
 
+<%= f.label "Image" %>
+<%= f.file_field :image %>
+
 <%= f.number_field :user_id, value: current_user.id %><br />
 
 <%= f.submit %>
