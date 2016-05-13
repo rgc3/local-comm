@@ -12,11 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require_tree .
 
-// Foundation
-$(function(){ $(document).foundation(); });
 
 // Google Maps
 var map;
